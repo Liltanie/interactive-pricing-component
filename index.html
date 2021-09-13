@@ -18,10 +18,13 @@
 		<main class="container">
 			<h1 class="primary-title">Simple, traffic-based pricing</h1>
 			<p>Sign-up for our 30-day trial.<br />No credit card required.</p>
-			<article>
+			<article class="pricing-component">
 				<div>
 					<label for="slider"><span class="views"></span> pageviews</label>
-					<input type="range" id="slider" step="1" min="0" max="4" />
+					<div class="slider-container">
+						<input type="range" id="slider" class="slider" step="1" min="0" max="4" />
+						<div class="progress-bar"><span class="progress-bar__fill"></span></siv>
+					</div>
 					<p>$<span class="price"></span><span>/ month</span></p>
 					<div>
 						<p>Monthly Billing</p>
