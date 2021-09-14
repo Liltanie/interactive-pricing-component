@@ -15,23 +15,30 @@ const prices = [
 ]
 
 addEventListener('DOMContentLoaded', e => {
+	if (localStorage.getItem('price')) setStatus(JSON.parse(localStorage.getItem('price')))
 	setPrice(slider.value)
 })
 
 slider.addEventListener('input', e => {
 	setPrice(slider.value)
-	changeProgressBar(slider.value)
 })
 
 switchBilling.addEventListener('input', e => {
 	setPrice(slider.value)
 })
 
+const setStatus = price => {
+	slider.value = price.value
+	switchBilling.checked = price.switchActive
+}
+
 const setPrice = value => {
 	let billing = prices[value].pricePerMonth
 	if (switchBilling.checked) billing -= (billing * 25) / 100
 	price.textContent = `$${billing}.00`
 	views.textContent = prices[value].pageviews
+	changeProgressBar(slider.value)
+	savePriceLocalStorage(slider.value, switchBilling.checked)
 }
 
 const changeProgressBar = value => {
@@ -42,4 +49,12 @@ const changeProgressBar = value => {
 	progressBar.style.width = `${progress}%`
 }
 
-//save in local storage
+const savePriceLocalStorage = (value, switchActive) => {
+	localStorage.setItem(
+		'price',
+		JSON.stringify({
+			value: value,
+			switchActive: switchActive,
+		})
+	)
+}
