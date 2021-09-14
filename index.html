@@ -5,6 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Simple, traffic-based pricing</title>
+		<link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon" />
 		<link rel="stylesheet" href="/css/normalize.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,22 +19,22 @@
 		<main class="container">
 			<h1 class="primary-title">Simple, traffic-based pricing</h1>
 			<p>Sign-up for our 30-day trial.<br />No credit card required.</p>
-			<article class="pricing-component">
+			<article class="card">
 				<div>
-					<label for="slider"><span class="views"></span> pageviews</label>
+					<label class="label-views" for="slider"><span class="views"></span> pageviews</label>
 					<div class="slider-container">
 						<input type="range" id="slider" class="slider" step="1" min="0" max="4" />
-						<div class="progress-bar"><span class="progress-bar__fill"></span></siv>
+						<div class="progress-bar"><span class="progress-bar__fill"></span></div>
 					</div>
-					<p>$<span class="price"></span><span>/ month</span></p>
-					<div>
+					<p class="p-price"><span class="price"></span>/ month</p>
+					<div class="card__switch-billing">
 						<p>Monthly Billing</p>
 						<label class="switch">
 							<input type="checkbox" id="switch" />
-							<span class="switch"></span>
+							<span class="switch-slider"></span>
 						</label>
 						<p>Yearly Billing</p>
-						<p>-25%</p>
+						<p class="discount">-25%</p>
 					</div>
 				</div>
 				<div>

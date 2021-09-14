@@ -30,7 +30,7 @@ switchBilling.addEventListener('input', e => {
 const setPrice = value => {
 	let billing = prices[value].pricePerMonth
 	if (switchBilling.checked) billing -= (billing * 25) / 100
-	price.textContent = billing
+	price.textContent = `$${billing}.00`
 	views.textContent = prices[value].pageviews
 }
 
